@@ -1,5 +1,7 @@
-1 冒泡法
-算法适用于少量数据的排序，时间复杂度为O(n^2)，是稳定的排序方法。
+## 1 冒泡法
+1 算法适用于少量数据的排序，时间复杂度为O(n^2)，是稳定的排序方法。
+需要进行的比较次数为第一轮 n-1，n-2....1, 总的比较次数为 n*(n-1)/2
+
 比如有五个数: 12, 35, 99, 18, 76, 从大到小排序, 对相邻的两位进行比较
 
 第一趟:
@@ -17,14 +19,22 @@
 99, 76, 35, 18, 12
 比较完成
 冒泡排序原理: 每一趟只能将一个数归位, 如果有n个数进行排序,只需将n-1个数归位, 也就是说要进行n-1趟操作(已经归位的数不用再比较)
-
+'''python
 def bubbleSort(nums):
-    for i in range(len(nums)-1):
+ #一共进行几轮列表比较,一共是(length-1)轮
+    for i in range(0，len(nums)-1):
+ #每一轮的比较,注意range的变化,这里需要进行length-1-长的比较,注意-i的意义(可以减少比较已经排好序的元素)   
         for j in range(len(nums)-i-1):
             if nums[j] > nums[j+1]:
                 nums[j], nums[j+1] = nums[j+1], nums[j]
     return nums
+  #交换
+12             if myList[j] > myList[j+1]:
+13                 tmp = myList[j]
+14                 myList[j]=myList[j+1]
+15                 myList[j+1] = tmp
 
 nums = [5,2,45,6,8,2,1,100,1901,9]
 
 print bubbleSort(nums)
+'''
