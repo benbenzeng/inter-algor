@@ -68,7 +68,8 @@ print selectsort(a)
 3 插入排序
 
 > 有一个已经有序的数据序列，要求在这个已经排好的数据序列中插入一个数，但要求插入后此数据序列仍然有序，这个时候就要用到一种新的排序方法——插入排序法,插入排序的基本操作就是将一个数据插入到已经排好序的有序数据中，从而得到一个新的、个数加一的有序数据，算法适用于少量数据的排序，时间复杂度为O(n^2)。是稳定的排序方法。插入算法把要排序的数组分成两部分：第一部分包含了这个数组的所有元素，但将最后一个元素除外（让数组多一个空间才有插入的位置），而第二部分就只包含这一个元素（即待插入元素）。在第一部分排序完成后，再将这个最后元素插入到已排好序的第一部分中。
-![Alt text](https://baike.baidu.com/pic/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/7214992/0/d57e99942da24e5dd21b7080?fr=lemma&ct=single#aid=0&pic=bd315c6034a85edf009ac5b04b540923dd54750a)
+<img src="https://baike.baidu.com/pic/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/7214992/0/d57e99942da24e5dd21b7080?fr=lemma&ct=single#aid=0&pic=bd315c6034a85edf009ac5b04b540923dd54750a" width="200px" />
+
 
 ![avatar](https://baike.baidu.com/pic/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/7214992/0/d57e99942da24e5dd21b7080?fr=lemma&ct=single#aid=0&pic=bd315c6034a85edf009ac5b04b540923dd54750a)
 
