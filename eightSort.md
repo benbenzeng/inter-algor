@@ -40,6 +40,26 @@ def bubbleSort(nums):
 15                 myList[j+1] = tmp
 
 nums = [5,2,45,6,8,2,1,100,1901,9]
+### 2 直接选择排序
+> 基本思想：选出最小的一个和第一个位置交换，选出其次小的和第二个位置交换 ……
+直到从第N个和第N-1个元素中选出最小的放在第N-1个位置。
+选择排序的复杂度分析。第一次内循环比较N - 1次，然后是N-2次，N-3次，……，最后一次内循环比较1次。
+共比较的次数是 (N - 1) + (N - 2) + ... + 1，求等差数列和，得 (N - 1 + 1)* N / 2 = N^2 / 2。
+舍去最高项系数，其时间复杂度为 O(N^2)。
+虽然选择排序和冒泡排序的时间复杂度一样，但实际上，选择排序进行的交换操作很少，最多会发生 N - 1次交换。
+而冒泡排序最坏的情况下要发生N^2 /2交换操作。从这个意义上讲，交换排序的性能略优于冒泡排序。
+而且，交换排序比冒泡排序的思想更加直观。
 
 print bubbleSort(nums)
 '''
+```python
+def selectsort(lists):
+    lenlistst = len(lists)
+    for i in range(lenlistst):
+        for j in range(i+1,lenlistst):
+            if lists[i] > lists[j]:
+                lists[i], lists[j] = lists[j], lists[i]
+    return lists
+a = [1, 56, 2, 24, 5, 16, 8, 96, 45, 100, 1901, 89]
+print selectsort(a)
+```
