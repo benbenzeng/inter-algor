@@ -13,7 +13,7 @@ def cal_drinks(n):
     avail_drinks = n
     sum_drunk = 0
     empty_drinks = 0
-
+    
     while avail_drinks > 0:
         # consume available drinks
         sum_drunk += avail_drinks
@@ -26,7 +26,6 @@ def cal_drinks(n):
     return sum_drunk
 
 
-
 # 方法2 递归方法：最重要的两个公式
 ##  n个空瓶: f(n) = n/2 + f(n/2 + n%2)
 ##  n块钱:  F(n) = n + f(n)
@@ -37,10 +36,9 @@ def cal_drinks_by_empty(n):
         sum_drunk = n//2 + cal_drinks_by_empty(n//2 + n%2)
 
     return sum_drunk
-
-
 def cal_drinks(n):
     return n + cal_drinks_by_empty(n)
+
 print cal_drinks(20)   #输出 39
 
 ## 除法运算// 返回商的整数部分，抛弃余数
