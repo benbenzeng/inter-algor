@@ -132,19 +132,19 @@ if __name__ == '__main__':
 ### 5 归并排序
 > 归并排序最令人兴奋的特点是：不论输入是什么样的，它对N个元素的序列排序所用时间与NlogN成正比。
 
-![avatar](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513834886501&di=8b48509c5abb20c8156306975b00388e&imgtype=0&src=http%3A%2F%2Fimages2015.cnblogs.com%2Fblog%2F1038183%2F201704%2F1038183-20170413210110111-1901310708.png
-)
-```python
 def merge(left, right):
-    """合并两个数组"""
     i, j = 0, 0
-    # i, j 分别作为left和right的下标
     result = []
     while i < len(left) and j < len(right):
+        print 'i j ',i,j
         if left[i] <= right[j]:
+            print 'left <right'
+            print 'left[i],right[j] =',left[i],right[j]
             result.append(left[i])
             i += 1
         else:
+            print 'left >right'
+            print 'left[i],right[j] =',left[i],right[j]
             result.append(right[j])
             j += 1
     result += left[i:]
@@ -154,13 +154,77 @@ def merge(left, right):
 def merge_sort(lists):
     if len(lists) <= 1:
         return lists
-    num = len(lists) / 2
+    num = len(lists) //2
     left = merge_sort(lists[:num])
     right = merge_sort(lists[num:])
     return merge(left, right)
-a = [1, 56, 2, 24, 5, 16, 8, 96, 45, 100, 1901, 89]
+a = [69,65,90,37,92,6,28,54,34]
 print merge_sort(a)
 
-# [1, 2, 5, 8, 16, 24, 45, 56, 89, 96, 100, 1901]
+![avatar](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513834886501&di=8b48509c5abb20c8156306975b00388e&imgtype=0&src=http%3A%2F%2Fimages2015.cnblogs.com%2Fblog%2F1038183%2F201704%2F1038183-20170413210110111-1901310708.png
+)
+```python
+/usr/bin/python /Users/zengfeng/PycharmProjects/algor_study/mergeSort.py
+i j  0 0
+left >right
+left[i],right[j] = 69 65
+i j  0 0
+left >right
+left[i],right[j] = 90 37
+i j  0 0
+left >right
+left[i],right[j] = 65 37
+i j  0 1
+left <right
+left[i],right[j] = 65 90
+i j  1 1
+left <right
+left[i],right[j] = 69 90
+i j  0 0
+left >right
+left[i],right[j] = 92 6
+i j  0 0
+left >right
+left[i],right[j] = 54 34
+i j  0 0
+left <right
+left[i],right[j] = 28 34
+i j  0 0
+left <right
+left[i],right[j] = 6 28
+i j  1 0
+left >right
+left[i],right[j] = 92 28
+i j  1 1
+left >right
+left[i],right[j] = 92 34
+i j  1 2
+left >right
+left[i],right[j] = 92 54
+i j  0 0
+left >right
+left[i],right[j] = 37 6
+i j  0 1
+left >right
+left[i],right[j] = 37 28
+i j  0 2
+left >right
+left[i],right[j] = 37 34
+i j  0 3
+left <right
+left[i],right[j] = 37 54
+i j  1 3
+left >right
+left[i],right[j] = 65 54
+i j  1 4
+left <right
+left[i],right[j] = 65 92
+i j  2 4
+left <right
+left[i],right[j] = 69 92
+i j  3 4
+left <right
+left[i],right[j] = 90 92
+[6, 28, 34, 37, 54, 65, 69, 90, 92]
 
 ```
