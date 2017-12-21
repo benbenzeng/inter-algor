@@ -215,3 +215,35 @@ left[i],right[j] = 90 92
 [6, 28, 34, 37, 54, 65, 69, 90, 92]
 
 ```
+### 6 快速排序
+
+> 快速排序基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。
+
+
+
+![avatar](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513839041454&di=e32f7740779f65cdd624b749df4f3896&imgtype=0&src=http%3A%2F%2Fimages2015.cnblogs.com%2Fblog%2F803394%2F201511%2F803394-20151130125447890-1717243395.jpg
+)
+
+```python
+def quick_sort(lists, left, right):
+    if left >= right:
+        return lists
+    key = lists[left]
+    low = left
+    high = right
+    while left < right:
+        while left < right and lists[right] >= key:
+            right -= 1
+        lists[left] = lists[right]
+        while left < right and lists[left] <= key:
+            left += 1
+        lists[right] = lists[left]
+    lists[right] = key
+    quick_sort(lists, low, left - 1)
+    quick_sort(lists, left + 1, high)
+    return lists
+a = [1, 56, 2, 24, 5, 16, 8, 96, 45, 100, 1901, 89]
+print quick_sort(a,0,len(a)-1)
+[1, 2, 5, 8, 16, 24, 45, 56, 89, 96, 100, 1901]
+
+```
