@@ -24,15 +24,16 @@
 > 比较完成
 * 冒泡排序原理: 每一趟只能将一个数归位, 如果有n个数进行排序,只需将n-1个数归位, 也就是说要进行n-1趟操作(已经归位的数不用再比较)
 
-```python
-def bubbleSort(nums):
- #一共进行几轮列表比较,一共是(length-1)轮
-    for i in range(0，len(nums)-1):
- #每一轮的比较,注意range的变化,这里需要进行length-1-长的比较,注意-i的意义(可以减少比较已经排好序的元素)   
-        for j in range(len(nums)-i-1):
-            if nums[j] > nums[j+1]:
-                nums[j], nums[j+1] = nums[j+1], nums[j]
-    return nums
+```python   
+    def bubble_sort(lists):
+    # 冒泡排序
+    count = len(lists)
+    for i in range(0, count):
+        for j in range(i + 1, count):
+            if lists[i] > lists[j]:
+                lists[i], lists[j] = lists[j], lists[i]
+    return lists
+    
   #交换
 12             if myList[j] > myList[j+1]:
 13                 tmp = myList[j]
@@ -53,19 +54,24 @@ nums = [5,2,45,6,8,2,1,100,1901,9]
 而且，交换排序比冒泡排序的思想更加直观。
 
 ```python
-def selectsort(lists):
-    lenlistst = len(lists)
-    for i in range(lenlistst):
-        for j in range(i+1,lenlistst):
-            if lists[i] > lists[j]:
-                lists[i], lists[j] = lists[j], lists[i]
+    
+    def select_sort(lists):
+    # 选择排序
+    count = len(lists)
+    for i in range(0, count):
+        min = i
+        for j in range(i + 1, count):
+            if lists[min] > lists[j]:
+                min = j
+        lists[min], lists[i] = lists[i], lists[min]
     return lists
+    
 a = [1, 56, 2, 24, 5, 16, 8, 96, 45, 100, 1901, 89]
 print selectsort(a)
 [1, 2, 5, 8, 16, 24, 45, 56, 89, 96, 100, 1901]
 
 ```
-3 插入排序
+### 3 插入排序
 
 > 有一个已经有序的数据序列，要求在这个已经排好的数据序列中插入一个数，但要求插入后此数据序列仍然有序，这个时候就要用到一种新的排序方法——插入排序法,插入排序的基本操作就是将一个数据插入到已经排好序的有序数据中，从而得到一个新的、个数加一的有序数据，算法适用于少量数据的排序，时间复杂度为O(n^2)。是稳定的排序方法。插入算法把要排序的数组分成两部分：第一部分包含了这个数组的所有元素，但将最后一个元素除外（让数组多一个空间才有插入的位置），而第二部分就只包含这一个元素（即待插入元素）。在第一部分排序完成后，再将这个最后元素插入到已排好序的第一部分中。
 
