@@ -1,9 +1,9 @@
 ## 1 冒泡法
-* 算法适用于少量数据的排序，时间复杂度为O(n^2)，是稳定的排序方法。需要进行的比较次数为第一轮 n-1，n-2....1, 总的比较次数为 n*(n-1)/2
+> 算法适用于少量数据的排序，时间复杂度为O(n^2)，是稳定的排序方法。需要进行的比较次数为第一轮 n-1，n-2....1, 总的比较次数为 n*(n-1)/2 
+冒泡排序原理: 每一趟只能将一个数归位, 如果有n个数进行排序,只需将n-1个数归位, 也就是说要进行n-1趟操作(已经归位的数不用再比较)
 
-![avatar](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513837468750&di=80adbde9fea905f028d11eed783b8234&imgtype=0&src=http%3A%2F%2Fs4.51cto.com%2Fwyfs02%2FM00%2F7F%2F45%2FwKioL1cYja2QyroZAABJ7Vr_ICM404.png)
-
-* 冒泡排序原理: 每一趟只能将一个数归位, 如果有n个数进行排序,只需将n-1个数归位, 也就是说要进行n-1趟操作(已经归位的数不用再比较)
+![avatar](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513837468750&di=80adbde9fea905f028d11eed783b8234&imgtype=0&src=http%3A%2F%2Fs4.51cto.com%2Fwyfs02%2FM00%2F7F%2F45%2FwKioL1cYja2QyroZAABJ7Vr_ICM404.png
+)
 
 ```python   
     def bubble_sort(lists):
