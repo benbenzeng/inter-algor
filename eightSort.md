@@ -161,9 +161,11 @@ a = [69,65,90,37,92,6,28,54,34]
 print merge_sort(a)
 ```
 
-```python
 ![avatar](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513835830465&di=6d3414e325591a72add55676c5aa5be4&imgtype=0&src=http%3A%2F%2Fimg.my.csdn.net%2Fuploads%2F201304%2F17%2F1366200577_4767.png
 )
+
+
+
 ```python
 /usr/bin/python /Users/zengfeng/PycharmProjects/algor_study/mergeSort.py
 i j  0 0
