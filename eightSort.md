@@ -128,3 +128,35 @@ if __name__ == '__main__':
     nums = [9,3,5,8,2,7,1]
     print shellSort(nums)
 ```
+
+### 5 归并排序
+> 归并排序最令人兴奋的特点是：不论输入是什么样的，它对N个元素的序列排序所用时间与NlogN成正比。
+
+```python
+def merge(left, right):
+    i, j = 0, 0
+    result = []
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result += left[i:]
+    result += right[j:]
+    return result
+
+def merge_sort(lists):
+    if len(lists) <= 1:
+        return lists
+    num = len(lists) / 2
+    left = merge_sort(lists[:num])
+    right = merge_sort(lists[num:])
+    return merge(left, right)
+a = [1, 56, 2, 24, 5, 16, 8, 96, 45, 100, 1901, 89]
+print merge_sort(a)
+
+# [1, 2, 5, 8, 16, 24, 45, 56, 89, 96, 100, 1901]
+
+```
