@@ -132,9 +132,13 @@ if __name__ == '__main__':
 ### 5 归并排序
 > 归并排序最令人兴奋的特点是：不论输入是什么样的，它对N个元素的序列排序所用时间与NlogN成正比。
 
+![avatar](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513834886501&di=8b48509c5abb20c8156306975b00388e&imgtype=0&src=http%3A%2F%2Fimages2015.cnblogs.com%2Fblog%2F1038183%2F201704%2F1038183-20170413210110111-1901310708.png
+)
 ```python
 def merge(left, right):
+    """合并两个数组"""
     i, j = 0, 0
+    # i, j 分别作为left和right的下标
     result = []
     while i < len(left) and j < len(right):
         if left[i] <= right[j]:
