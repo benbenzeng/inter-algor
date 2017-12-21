@@ -34,9 +34,9 @@ nums = [5,2,45,6,8,2,1,100,1901,9]
 而冒泡排序最坏的情况下要发生N^2 /2交换操作。从这个意义上讲，交换排序的性能略优于冒泡排序。
 而且，交换排序比冒泡排序的思想更加直观。
 
-
 ![avatar](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1513855191642&di=a87d7df6af889b04aeb71ba957b0c147&imgtype=0&src=http%3A%2F%2Fimg0.ph.126.net%2FB-0Ay3zRizoehnnwSurEkw%3D%3D%2F1370220186727595322.jpg
 )
+
 
 ```python
     
